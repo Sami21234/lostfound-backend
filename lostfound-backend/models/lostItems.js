@@ -4,8 +4,11 @@ const lostItemSchema = new mongoose.Schema({
   itemName: { type: String, required: true },
   description: { type: String, required: true },
   location: { type: String, required: true },
-  image: { type: Buffer }, // 🔥 must be Buffer for multer memoryStorage
-  imageMimeType: { type: String }, // optional but good to have
+  imageUrl: { type: String }, // 🔧 FIXED: Changed from Buffer to String URL
+  contactName: { type: String }, // 🔧 ADDED: Missing contact fields
+  contactPhone: { type: String },
+  contactEmail: { type: String },
+  dateLost: { type: String },
   createdAt: { type: Date, default: Date.now },
 });
 
